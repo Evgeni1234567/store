@@ -10,7 +10,7 @@ namespace StoreMemory
         {
             new Book (1, "Art of Programming"),
             new Book (2, "Refact"),
-            new Book (3, "C prog")
+            new Book (3, "C Prog")
         
         };
 
