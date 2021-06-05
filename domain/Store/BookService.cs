@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 
 namespace Store
 {
-    public class BookService
+    public class BookService // ничего у себя не хранит
     {
+        private readonly IBookRepository bookRepository;
+
+        public BookService(IBookRepository bookRepository)
+        {
+            this.bookRepository = bookRepository;
+        }
         public Book[] GetAllByQuery(string query)
         {
-            if(IsIsbn(query))
+            if(Book.IsIsbn(query))
             {
-                retu    
+                return bookRepository.GetAllByIsbn(query);
             }
+
+            return bookRepository.GetAllByTitleOrAuthor(query);
         }
 
        

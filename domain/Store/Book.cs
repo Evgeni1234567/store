@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Store
 {
@@ -17,6 +18,20 @@ namespace Store
             Title = title;
         }
 
+        internal static bool IsIsbn(string s) // проверка на валидность данных ввода ISBN
+        {
+            if (s == null)
+                return false;
+
+             s = s.Replace("-", "") // дефис заменяем на пустую строку. ищет подстроку такую и меняет. делает дляы всех вхождений
+                  .Replace(" ", "")
+                  .ToUpper();
+
+            return Regex.IsMatch(s, @"^ISBN\d{10}(\d{3})?$"); // \\ d экранирование ситаксиса. Regex вернет тру если будет совпадать строка с патерном.
+        
+        }
+
+         
 
 
     }

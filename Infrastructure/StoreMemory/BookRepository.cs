@@ -16,18 +16,14 @@ namespace StoreMemory
 
         public Book[] GetAllByIsbn(string isbn)
         {
-            return books.Where(books => books.Isbn.Contains(isbn)).ToArray();
+            return books.Where(books => books.Isbn == isbn).ToArray();
         }
 
-        public Book[] GetAllByTitleOrAuthor(string titleOrAuthor)
+        public Book[] GetAllByTitleOrAuthor(string query)
         {
-            return books.Where(books => books.Title.Contains(titleOrAuthor)).ToArray();
-        }
-
-        public Book[] GetByTitle(string titlePatr)
-        {
-            return books.Where(book => book.Title.Contains(titlePatr))
-                        .ToArray();
+            return books.Where(books => books.Author.Contains(query)
+                                     || books.Title.Contains(query))
+                                .ToArray();
         }
     }
 }
