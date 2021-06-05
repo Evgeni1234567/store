@@ -16,12 +16,12 @@ namespace StoreMemory
 
         public Book[] GetAllByIsbn(string isbn)
         {
-            throw new NotImplementedException();
+            return books.Where(books => books.Isbn.Contains(isbn)).ToArray();
         }
 
         public Book[] GetAllByTitleOrAuthor(string titleOrAuthor)
         {
-            throw new NotImplementedException();
+            return books.Where(books => books.Title.Contains(titleOrAuthor)).ToArray();
         }
 
         public Book[] GetByTitle(string titlePatr)

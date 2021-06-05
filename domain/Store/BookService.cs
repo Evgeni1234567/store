@@ -10,7 +10,10 @@ namespace Store
     {
         public Book[] GetAllByQuery(string query)
         {
-            throw new NotImplementedException();
+            if(IsIsbn(query))
+            {
+                retu    
+            }
         }
 
        

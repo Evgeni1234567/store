@@ -8,7 +8,7 @@ namespace Store.Tests
         [Fact]
         public void Test1()
         {
-
+            
         }
     }
 }
