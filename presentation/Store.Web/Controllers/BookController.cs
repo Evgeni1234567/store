@@ -15,9 +15,8 @@ namespace Store.Web.Controllers
         }
         public IActionResult Index(int id)
         {
-
             Book book = bookRepository.GetById(id);
-            return View(book);
+            return View(book);    
         }
     }
 }
